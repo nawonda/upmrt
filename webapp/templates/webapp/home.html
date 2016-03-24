@@ -1,17 +1,28 @@
-{% extends "webapp/header.html" %}
+{% extends "webapp/base.html" %}
 
+{% block head %}
+<style type="text/css"> 
+  #map {
+    height: 50%;
+    width: 50%;
+  }
+</style>
+ 
+{% endblock %}
 {% block content %}
-<p>Hey this is home page!</p>
+<p>Home content</p>
 <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 25.0328718, lng: 121.5411065},
-          zoom: 15
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXkc_E3EMyzXTnNt6-w9qXRDyapRecHJI&callback=initMap"
-    async defer></script>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 25.0328718, lng: 121.5411065},
+        zoom: 15
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXkc_E3EMyzXTnNt6-w9qXRDyapRecHJI&callback=initMap"
+  async defer></script>
+ 
+  
 {% endblock %}
