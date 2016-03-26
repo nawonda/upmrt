@@ -6,7 +6,7 @@ def index(request):
 	return render(request, 'webapp/index.html')
 
 def driver(request):	
-	return render(request, 'webapp/driver.html')	
+	return render(request, 'cmsapp/index.html')	
 
 def help(request):	
 	return render(request, 'webapp/help.html')	
@@ -24,3 +24,5 @@ def contact(request):
 	postObjects = Post.objects.all().order_by("-date")[:25]	
 	return render(request, 'webapp/contact.html',{'info':postObjects})	
 	# return render(request, 'webapp/contact.html',{'info':['jerry','jy1215jy@gmail.com']})	
+
+	
