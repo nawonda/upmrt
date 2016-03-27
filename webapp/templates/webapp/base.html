@@ -37,19 +37,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/driver"><span class="new-btn new-btn-selected">Become a Driver<span></a>
+                        {% if user.is_authenticated %}
+                            <a href="/driver"><span class="new-btn new-btn-selected">Become a Driver<span></a>
+                         {% else %}   
+                            <a href="/accounts/register/"><span class="new-btn new-btn-selected">Become a Driver<span></a>
+                        {% endif%}
                     </li>
                     <li>
                         <a href="/help">Help</a>
-                    </li>
+                    </li>                    
+                    {% if not user.is_authenticated %}
+                        <li>                    
+                            <a href="/accounts/register" data-toggle="modal" data-target="#register_modal">Sign Up</a>
+                        </li>    
+                    {% endif%}                    
                     <li>
-                        <a href="/signup">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="/login">Log In</a>
+                        {% if user.is_authenticated %}
+                            <a href="/accounts/logout" data-toggle="modal" data-target="#login_modal">Log Out</a>
+                        {% else %}   
+                            <a href="/accounts/login" data-toggle="modal" data-target="#login_modal">Log In</a>
+                        {% endif%}
                     </li>
                 </ul>
-            </div>
+            </div>            
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -125,5 +135,18 @@
     </footer>
         {% block footer %}{% endblock %}
     </div>    
+    <!-- Modal -->
+    <div class="modal fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="register_modal_label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">          
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">          
+        </div>
+      </div>
+    </div>
 </body>
 </html>

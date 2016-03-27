@@ -18,8 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [	
     url(r'^admin/', admin.site.urls),
-    url(r'^zpanel', include('cmsapp.urls')),
+    url(r'^zpanel/', include('cmsapp.urls')),
     url(r'^', include('webapp.urls')),
-
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
 ]
 

@@ -123,3 +123,23 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+LOGIN_REDIRECT_URL = '/zpanel'
+
+ACCOUNT_ACTIVATION_DAYS = 1
+
+#settings for sending email
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+else:
+    #to make it work, go to 
+    #https://www.google.com/settings/security/lesssecureapps
+    #lower your email account security
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'jy1215jy@gmail.com'
+    EMAIL_HOST_PASSWORD = 'fqsj1536'
+    EMAIL_PORT = 587
+
+
