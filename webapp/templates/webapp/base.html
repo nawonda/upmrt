@@ -53,7 +53,7 @@
                     {% endif%}                    
                     <li>
                         {% if user.is_authenticated %}
-                            <a href="/accounts/logout" data-toggle="modal" data-target="#login_modal">Log Out</a>
+                            <a href="/accounts/logout/?next=/">Log Out</a>
                         {% else %}   
                             <a href="/accounts/login" data-toggle="modal" data-target="#login_modal">Log In</a>
                         {% endif%}

@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-LOGIN_REDIRECT_URL = '/zpanel'
+LOGIN_REDIRECT_URL = '/'
 
 ACCOUNT_ACTIVATION_DAYS = 1
 
@@ -139,7 +139,7 @@ else:
     EMAIL_USE_TLS = True
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = 'jy1215jy@gmail.com'
-    EMAIL_HOST_PASSWORD = 'fqsj1536'
+    EMAIL_HOST_PASSWORD = 'xxxxxxxx'
     EMAIL_PORT = 587
 
 
