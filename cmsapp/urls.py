@@ -18,11 +18,19 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.index,name='index'),
-    url(r'^blank/$', views.blank,name='blank'),
-    url(r'^buttons/$', views.buttons,name='buttons'),
+    url(r'^dashboard/$', views.dashboard,name='dashboard'),
+    url(r'^profile/$', views.profile,name='profile'),
     url(r'^flot/$', views.flot,name='flot'),
+    url(r'^morris/$', views.morris,name='morris'),
+    url(r'^routes/$', views.routes,name='routes'),        
     url(r'^forms/$', views.forms,name='forms'),
-    url(r'^grid/$', views.grid,name='grid'),
+    url(r'^panelswells/$', views.panelswells,name='panelswells'),
+    url(r'^buttons/$', views.buttons,name='buttons'),
+    url(r'^notifications/$', views.notifications,name='notifications'),
+    url(r'^typography/$', views.typography,name='typography'),
     url(r'^icons/$', views.icons,name='icons'),
+    url(r'^grid/$', views.grid,name='grid'),
+    url(r'^blank/$', views.blank,name='blank'),
+    url(r'^login/$', views.login,name='login'),
+
 ]

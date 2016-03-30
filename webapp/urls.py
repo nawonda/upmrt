@@ -19,10 +19,9 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index,name='index'),
-    url(r'^driver/$', views.driver,name='driver'),
-    url(r'^help/$', views.help,name='help'),
-    url(r'^signup/$', views.signup,name='signup'),
-    url(r'^login/$', views.login,name='login'),
-    url(r'^contact/$', views.contact,name='contact'),
-    url(r'^about/$', views.about,name='about'),
+    url(r'^help$', views.help,name='help'),
+    url(r'^signup$', views.signup,name='signup'),
+    url(r'^login$', views.login,name='login'),
+    url(r'^contact$', views.contact,name='contact'),
+    url(r'^about$', views.about,name='about'),
 ]

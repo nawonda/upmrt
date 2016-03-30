@@ -5,8 +5,8 @@ from webapp.models import Post
 def index(request):
 	return render(request, 'webapp/index.html')
 
-def driver(request):	
-	return render(request, 'cmsapp/index.html')	
+def dashboard(request):	
+	return render(request, 'cmsapp/dashboard.html')	
 
 def help(request):	
 	return render(request, 'webapp/help.html')	
