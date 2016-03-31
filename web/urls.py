@@ -1,4 +1,4 @@
-"""upmrt URL Configuration
+"""project1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -14,15 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+from . import views
 
-urlpatterns = [	
-    url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('registration.backends.hmac.urls')),    
-    url(r'^', include('web.urls')),
-    url(r'^dashboard/', include('dashboard.urls')),
-    url(r'^users/', include('users.urls')),
-    url(r'^routes/', include('routes.urls')),
-    url(r'^help/', include('help.urls')),        
+
+urlpatterns = [
+    url(r'^$', views.index,name='index'),
+    url(r'^signup$', views.signup,name='signup'),
+    url(r'^login$', views.login,name='login'),
+    url(r'^contact$', views.contact,name='contact'),
+    url(r'^about$', views.about,name='about'),
 ]
-
