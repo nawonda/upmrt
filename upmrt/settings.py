@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #addon
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # Login via social account
+    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,13 +133,36 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_URL = '/login'
 
 LOGIN_REDIRECT_URL = '/'
 
-ACCOUNT_ACTIVATION_DAYS = 7
+AUTHENTICATION_BACKENDS = (
+    # Default backend -- used to login by username in Django admin
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+
+#django-auth setup
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+LOGIN_REDIRECT_URL = "/"
+
+#test google login
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'fixtures'),
+    )
 
 #settings for sending email
 if DEBUG:

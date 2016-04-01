@@ -513,7 +513,7 @@ body {
   color: #777
 }
 
-.navbar-custom-black .nav li a:hover, .navbar-custom .nav li a:focus,.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
+.navbar-custom-black .nav li a:hover, .navbar-custom-black .nav li a:focus,.navbar-custom-black .navbar-brand:hover, .navbar-custom-black .navbar-brand:focus {
     color: #353535;
 }
 

@@ -38,7 +38,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         {% if user.is_authenticated %}
-                            <a href="/zpanel/dashboard"><span class="new-btn new-btn-selected">Become a Driver<span></a>
+                            <a href="/dashboard"><span class="new-btn new-btn-selected">Become a Driver<span></a>
                          {% else %}   
                             <a href="/accounts/register/"><span class="new-btn new-btn-selected">Become a Driver<span></a>
                         {% endif%}
@@ -48,7 +48,7 @@
                     </li>                    
                     {% if not user.is_authenticated %}
                         <li>                    
-                            <a href="/accounts/register" data-toggle="modal" data-target="#register_modal">Sign Up</a>
+                            <a href="/accounts/register">Sign Up</a>
                         </li>    
                     {% endif%}                    
                     <li class="dropdown">
@@ -62,12 +62,13 @@
                                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="/accounts/logout/?next=/"><i class="fa fa-sign-out fa-fw"></i>Log Out </a>
+                                <li><a href="/accounts/logout"><i class="fa fa-sign-out fa-fw"></i>Log Out </a>
                                 </li>
                             </ul>
 
                         {% else %}   
-                            <a href="/accounts/login" data-toggle="modal" data-target="#login_modal">Log In</a>
+                            <a href="/accounts/login">Log In</a>
+                            <!-- <a href="/accounts/google/login">Log In</a> -->
                         {% endif%}
                     </li>
                 </ul>
@@ -153,12 +154,6 @@
         <div class="modal-content">          
         </div>
       </div>
-    </div>
-    <div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal_label">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">          
-        </div>
-      </div>
-    </div>
+    </div>    
 </body>
 </html>
