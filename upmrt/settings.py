@@ -159,23 +159,10 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 LOGIN_REDIRECT_URL = "/"
 
-#test google login
+#selenium
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures'),
-    )
+)
 
-#settings for sending email
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-else:
-    #to make it work, go to 
-    #https://www.google.com/settings/security/lesssecureapps
-    #lower your email account security
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = 'jy1215jy@gmail.com'
-    EMAIL_HOST_PASSWORD = 'xxxxxxxx'
-    EMAIL_PORT = 587
 
 

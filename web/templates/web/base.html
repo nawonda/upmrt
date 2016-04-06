@@ -40,7 +40,7 @@
                         {% if user.is_authenticated %}
                             <a href="/dashboard"><span class="new-btn new-btn-selected">Become a Driver<span></a>
                          {% else %}   
-                            <a href="/accounts/register/"><span class="new-btn new-btn-selected">Become a Driver<span></a>
+                            <a href="/accounts/login/"><span class="new-btn new-btn-selected">Become a Driver<span></a>
                         {% endif%}
                     </li>
                     <li>
@@ -48,7 +48,7 @@
                     </li>                    
                     {% if not user.is_authenticated %}
                         <li>                    
-                            <a href="/accounts/register">Sign Up</a>
+                            <a href="/accounts/signup">Sign Up</a>
                         </li>    
                     {% endif%}                    
                     <li class="dropdown">
