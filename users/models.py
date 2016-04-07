@@ -13,10 +13,38 @@ class Profile(models.Model):
         verbose_name=_("user")
         )
     # Attributes - Mandatory
-    interaction = models.PositiveIntegerField(
+    reviews = models.IntegerField(
         default=0,
-        verbose_name=_("interaction")
+        verbose_name=_("reviews")
         )
+    
+    gender = models.CharField(
+        max_length=6,
+        null=True,
+        verbose_name=_("gender")
+    )
+
+    birthday = models.DateField(
+        null=True,
+        verbose_name=_("birthday")
+    )
+    phone_number = phone_number = models.CharField(
+        max_length=12,
+        null=True,
+        verbose_name=_("phone_number")
+    )
+    home_address = models.CharField(
+        max_length=200,
+        null=True,
+        verbose_name=_("home_address")
+    )
+
+    office_address = models.CharField(
+        max_length=200,
+        null=True,
+        verbose_name=_("office_address")
+    )
+
     # Attributes - Optional
     # Object Manager
     objects = managers.ProfileManager()

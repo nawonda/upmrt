@@ -11,7 +11,7 @@ class ProjectsInLine(admin.TabularInline):
 @admin.register(models.Profile)
 class ProfileAdmin(admin.ModelAdmin):
  
-    list_display = ("username", "interaction", "_projects")
+    list_display = ("username", "reviews", "_projects")
  
     search_fields = ["user__username"]
  
